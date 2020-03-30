@@ -4,7 +4,7 @@ $dbuser = $_ENV['MYSQL_USER'];
 $dbpass = $_ENV['MYSQL_PASS'];
 $dadosXls = "";
 try {
-    $pdo = new PDO("mysql:host=mysql;dbname=corona_db", $dbuser, $dbpass);
+    $pdo = new PDO("mysql:host=mysql:3307;dbname=corona_db", $dbuser, $dbpass);
     $statement = $pdo->prepare("SELECT * FROM corona_db.tbl_voluntarios");
     $statement->execute();
     $voluntarios = $statement->fetchAll(PDO::FETCH_OBJ);
